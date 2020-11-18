@@ -18,15 +18,15 @@ acc 0.76 d
 WISH LIST
 ------------------------
 
-reuse last model if accury better
+reuse last model if accuracy is good
 re-traing using slots of data
-remove entities (person, location, etc..)
 cross-validation
 cluster topics
 recommend the returning msg based on the profile of the entry msg
 recommend the returning msg based on the profile of person
 recommend based on person profile (gender, number of sent msg, number of msg received, size of msgs sent, number of msg anwsered, number of msg not anwsered)
 recommend based on msg of movie and its rating
+replace negative messages
 
 
 ------------------------
@@ -36,8 +36,11 @@ HISTORY
 00xx: f - ipsum lorem
 acc 0.xx u val_acc 0.x
 
-0010: f - use grid search to find better parameters
+0010: f - remove entities
 acc 0.xx u val_acc 0.x
+
+0010: x - use grid search to find better parameters
+acc 0.81 d val_acc 0.81
 
 0009: o - add the duplicated messages in the train data 
 acc 0.83 u val_acc 0.81
