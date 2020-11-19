@@ -1,6 +1,6 @@
-## A intenção do projeto é criar um chatbot baseado em reviews de filmes para que se possa fazer perguntas e manter uma conversa livre sobre este tema
+## The intention of the project is to create a chatbot based on movie reviews so that you can ask questions and have a free conversation on this topic.
 
-- link do banco de dados https://www.kaggle.com/Cornell-University/movie-dialog-corpus?select=movie_lines.tsv
-- referências
+- dataset https://www.kaggle.com/Cornell-University/movie-dialog-corpus?select=movie_lines.tsv
+- References
 >- https://shanebarker.com/blog/deep-learning-chatbot/
 > -https://towardsdatascience.com/how-to-create-a-chatbot-with-python-deep-learning-in-less-than-an-hour-56a063bdfc44
