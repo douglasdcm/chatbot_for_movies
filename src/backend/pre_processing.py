@@ -3,8 +3,22 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
+from nltk.corpus import wordnet
+
+
+
 
 class PreProcessing:
+		
+	def get_wordnet_pos(self, word):
+	    """Map POS tag to first character lemmatize() accepts"""
+	    tag = nltk.pos_tag([word])[0][1][0].upper()
+	    tag_dict = {"J": wordnet.ADJ,
+	                "N": wordnet.NOUN,
+	                "V": wordnet.VERB,
+	                "R": wordnet.ADV}
+
+	    return tag_dict.get(tag, wordnet.NOUN)
 
 	def __init__(self):
 		self.lemmatizer = WordNetLemmatizer()
@@ -26,7 +40,7 @@ class PreProcessing:
 	    corpus = re.findall(r"\w+(?:'\w+)?|[^\w\s]", corpus)
 	    
 	    #lammatization
-	    corpus = [self.lemmatizer.lemmatize(c) for c in corpus]
+	    corpus = [self.lemmatizer.lemmatize(c, self.get_wordnet_pos(c)) for c in corpus]
 	    
 	    #remove punctuation
 	    corpus = [t for t in corpus if t not in string.punctuation]

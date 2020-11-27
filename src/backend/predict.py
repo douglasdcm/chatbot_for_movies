@@ -1,38 +1,44 @@
-import pickle
 from pre_processing import PreProcessing
-from tensorflow.keras.models import load_model
-from keras.preprocessing.text import Tokenizer
 from similarity import Similarity
-from dataset import Dataset
 
 class Prediction:
 
-	def __init__(self, messages=None):
-		if not messages:
-			print('Loading brain...')
+	def __init__(self, messages, model, questions: set, answers: set,
+				 pc_questions: dict, pc_answers: dict, tokenizer):
 
-			ds = Dataset()
+		self.questions = questions
+		self.answers = answers
+		self.pc_questions = pc_questions
+		self.pc_answers = pc_answers	
+		self.tokenizer = tokenizer	
+		self.model = model
+		self.messages = messages
+		self.pp = PreProcessing()		
+		self.s = Similarity(questions=self.questions,
+							answers=self.answers
+							)
 
-			self.messages = ds.import_dataset()
-			self.questions = ds.get_questions(self.messages) #['why?', 'how?', 'when?']
-			self.answers = ds.get_answers(self.messages) #['yes', 'no', 'maybe']
-			print('Done.')
 
 	def predict(self, msg):
 
-		pp = PreProcessing()
+		#print('Predicting next conversation.')
+		msg = self.pp.pre_processing_text(msg)
+		
+		p = self.tokenizer.texts_to_matrix([msg])
 
-		msg = pp.pre_processing_text(msg)
+		res = self.model.predict(p)
 
-		# loading
-		with open('tokenizer.pickle', 'rb') as handle:
-		    tokenizer = pickle.load(handle)
-		p = tokenizer.texts_to_matrix([msg])
+		if res >= 0.5:
+			pc = self.pc_questions
+		else:
+			pc = self.pc_answers
 
-		model = load_model('chatbot_model.h5')
-		res = model.predict(p)
+		#conversations = self.s.return_conversation_by_jaccard(msg, res)
+		conversations = self.s.return_conversation_by_cossine(msg, res)
+		#conversations = self.s.return_conversation_by_cossine_embedding(msg, res)
 
-		s = Similarity()
-
-		conversations = s.return_conversation_by_jaccard(msg, res, self.questions, self.answers)
-		return s.get_the_next_conversation(conversations)
+		conversations = self.s.return_conversation_by_page_rank(msg, conversations,
+																page_compute=pc,
+																reverse=True)		
+		
+		return self.s.get_the_next_conversation(conversations, self.messages)

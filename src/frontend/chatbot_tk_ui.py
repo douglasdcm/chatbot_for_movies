@@ -3,11 +3,14 @@ sys.path.insert(0, '/mnt/c/Users/Douglas/trainning/chatbot_for_movies/src/backen
 #Creating GUI with tkinter
 import tkinter
 from tkinter import *
-from predict import Prediction
+from chatbot import ChatBotInit
 
+
+cb = ChatBotInit()
 
 
 def send():
+    
     msg = EntryBox.get("1.0",'end-1c').strip()
     EntryBox.delete("0.0",END)
 
@@ -16,9 +19,8 @@ def send():
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
 
-        p = Prediction()
 
-        res = str(p.predict(msg))
+        res = cb.init_chat_win(msg)
         ChatLog.insert(END, "Bot: " + res + '\n\n')
 
         ChatLog.config(state=DISABLED)
