@@ -1,4 +1,4 @@
-# Overview
+# Overview (WORK IN PROGRESS)
 
 The intention of this project is to create a chatbot based on movie reviews so that you can ask questions and have a free conversation about this topic.
 
@@ -28,10 +28,14 @@ So, I started search for possible solutions, just for curiosity, and I found som
 - math
 
 ## Prototype
-![alt text](https://ibb.co/7YCLV8t)
+![alt text](https://i.ibb.co/X2LMpNx/chatbot-ui.png)
 
 ## Running the chatbot
-<code>python3 main.py<\code>
+
+```bash
+pip3 install -r requirements.txt
+python3 main.py
+```
 
 
 ## References
