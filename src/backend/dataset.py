@@ -1,10 +1,13 @@
+from settings import DATA_FILE, PAGE_RANK_QUESTIONS, PAGE_RANK_ANSWERS, TOKENIZER_FILE
 import pandas as pd
-from settings import CHATDATA_DIR
+import ast
+import pickle
+
 
 class Dataset:
 
 	def import_dataset(self):
-		return pd.read_csv(CHATDATA_DIR + 'movie_lines_pre_processed_for_test.tsv', 
+		return pd.read_csv(DATA_FILE, 
 			delimiter="\t", quoting=3, encoding='ISO-8859-2')
 
 
@@ -22,9 +25,9 @@ class Dataset:
 		file = None
 
 		if qea == 0:
-			file = CHATDATA_DIR + 'page_rank_answers.txt'
+			file = PAGE_RANK_QUESTIONS
 		else:
-			file = CHATDATA_DIR + 'page_rank_questions.txt'
+			file = PAGE_RANK_ANSWERS
 
 		f = open(file, "r")
 		pc = f.read()
@@ -34,6 +37,6 @@ class Dataset:
 
 
 	def load_tokenizer(self):
-		with open(CHATDATA_DIR + 'tokenizer.pickle', 'rb') as handle:
+		with open(TOKENIZER_FILE, 'rb') as handle:
 		    tokenizer = pickle.load(handle)
 		return tokenizer

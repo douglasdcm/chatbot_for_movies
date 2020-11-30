@@ -1,8 +1,6 @@
-from settings import CHATDATA_DIR
 from predict import Prediction
+from settings import CHATDATA_DIR
 from dataset import Dataset
-import ast
-import pickle
 from tensorflow.keras.models import load_model
 import gensim
 from utils import save_content_to_log
@@ -12,6 +10,7 @@ class ChatBotInit:
 
 	def __init__(self):		
 
+		#TODO move to outside
 		self.model_name = 'chatbot_model.h5'
 		self.embedding_file = 'embedding_wiki_100d_pt.txt'
 		self.ds = Dataset()
@@ -30,9 +29,6 @@ class ChatBotInit:
 							pc_answers=self.pc_answers,
 							tokenizer=self.tokenizer
 							)
-		#self.word_vectors = None
-		#self.word_vectors = gensim.models.KeyedVectors.load_word2vec_format(CHATDATA_DIR + self.embedding_file,binary=False)	 			
-
 
 	def init_chat_win(self, m):
 		return str(self.p.predict(m))
@@ -49,6 +45,7 @@ class ChatBotInit:
 		print(' Tip: You can type \"bye\" anytime to leave.')
 
 		while(m != exit):
+			#TODO save conversation to file_timestamp
 			try:
 				m = input(you_prefix)
 

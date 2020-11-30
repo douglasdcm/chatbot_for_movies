@@ -33,9 +33,7 @@ class Prediction:
 		else:
 			pc = self.pc_answers
 
-		#conversations = self.s.return_conversation_by_jaccard(msg, res)
 		conversations = self.s.return_conversation_by_cossine(msg, res)
-		#conversations = self.s.return_conversation_by_cossine_embedding(msg, res)
 
 		conversations = self.s.return_conversation_by_page_rank(msg, conversations,
 																page_compute=pc,
