@@ -1,9 +1,9 @@
 from sklearn.feature_extraction.text import CountVectorizer
 from scipy.spatial import distance
+from utils import save_content_to_log, naive_massage
+from settings import *
+from pre_processing import PreProcessing
 import math
-from utils import save_content_to_log
-from settings import * 
-import numpy as np
 
 class Similarity:
 
@@ -13,52 +13,43 @@ class Similarity:
 		self.questions = questions
 		self.answers = answers
 		self.word_vectors = word_vectors
-	    
+		self.pp = PreProcessing()
 
 	def get_the_next_conversation(self, conversations, df):
 		"""
 		Get the first item in the dict
 		"""
-		save_content_to_log('Geting the next conversation.')
+
+		print('get_the_next_conversation_1')
 
 		keys_view = conversations.keys()
 		keys_iterator = iter(keys_view)
-		conversation = next(keys_iterator)
+		try:
+			conversation = next(keys_iterator)
+			print('get_the_next_conversation_2')
+		except Exception as e:
+			save_content_to_log(e)
+			print('get_the_next_conversation_3')
+			return naive_massage()
+
+		print('get_the_next_conversation_4')
 
 		return list(df[df['msg_pre_processed'] == conversation]['msg_2'])[0]
-
-
-	def normalize_dictionary(self, dic):
-
-		zero_dict = {k: 0.0 for k, v in dic.items()}
-
-		for v in dic.values():
-			if not isinstance(v, np.floating):
-				return zero_dict
-
-		den = math.fsum(dic.values())
-
-		if den == 0:
-			return zero_dict
-		
-		factor = 1.0 / den
-		return {k: (v * factor) for k, v in dic.items()}
-
 
 	def return_conversation_by_page_rank(self, msg, conversations, page_compute, reverse=True):		
 		"""
 		Return a dictionary of message and similarity sorted by highter similarity
 		"""
-		#similarity = [jaccard_similarity(msg, str(m)) for m in questions]  
-
-		save_content_to_log('Returning conversations by Jaccard Similarity based on Page Rank.')
+		print('return_conversation_by_page_rank_1')
+		conversations = self.pp.normalize_dictionary(conversations)
+		print('return_conversation_by_page_rank_2')
 		
-		result = self.normalize_dictionary(conversations)
+		print('return_conversation_by_page_rank_3')
 
-		result = {k: page_compute[k] + v for k, v in result.items()}
+		conversations = {k: page_compute[k] + v for k, v in conversations.items()}
+		print('return_conversation_by_page_rank_4')
 
-		return {k: v for k, v in sorted(result.items(), key=lambda item: item[1], reverse=reverse)}
-
+		return {k: v for k, v in sorted(conversations.items(), key=lambda item: item[1], reverse=reverse)}
 
 	def return_conversation_by_cossine(self, msg, res):
 		"""
@@ -70,6 +61,7 @@ class Similarity:
 			msg_list = self.answers
 
 		similarity = []
+		
 		for m in msg_list:
 			m = str(m)
 			new_msg_list = [msg, m]
@@ -88,14 +80,25 @@ class Similarity:
 				similarity.append(0.0)
 			else:
 				similarity.append(d)
+		"""
 
+		vector_bow = [self.bow.fit_transform([msg, m]) for m in msg_list]
+		msg_bow = [vect.todense()[0] for vect in vector_bow]
+		m_bow = [vect.todense()[1] for vect in vector_bow]
+
+		similarity = [1 - distance.cosine(msg_vect, m_vect) for msg_vect, m_vect in zip(msg_bow, m_bow)]
+		
+		"""
+		result = dict(zip(msg_list, similarity))
+
+		"""
 		result = {}
 		for key in msg_list:
 			for value in similarity:
 				result[key] = value
 				similarity.remove(value)
 				break
+				"""
 
-		return {k: v for k, v in sorted(result.items(), key=lambda item: item[1], reverse=False)}
-	    
- 
+		#return {k: v for k, v in sorted(result.items(), key=lambda item: item[1], reverse=False)}
+		return result

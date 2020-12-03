@@ -1,5 +1,6 @@
 from pre_processing import PreProcessing
 from similarity import Similarity
+from utils import emergency_message
 
 class Prediction:
 
@@ -20,10 +21,18 @@ class Prediction:
 
 
 	def predict(self, msg):
+		if msg == '' or msg is None:
+			return emergency_message()
+			
+		try:
+			msg = self.pp.pre_processing_text(msg)
+		except Exception as e:
+			print(bot_prefix + emergency_message())
+			save_content_to_log(e)
 
-		#print('Predicting next conversation.')
-		msg = self.pp.pre_processing_text(msg)
-		
+		if msg == '' or msg is None:
+			return emergency_message()
+
 		p = self.tokenizer.texts_to_matrix([msg])
 
 		res = self.model.predict(p)
@@ -33,8 +42,10 @@ class Prediction:
 		else:
 			pc = self.pc_answers
 
-		conversations = self.s.return_conversation_by_cossine(msg, res)
+		print(res)
 
+		conversations = self.s.return_conversation_by_cossine(msg, res)
+		print('return_conversation_by_cossine')
 		conversations = self.s.return_conversation_by_page_rank(msg, conversations,
 																page_compute=pc,
 																reverse=True)		

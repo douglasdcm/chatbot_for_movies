@@ -1,116 +1,108 @@
 import unittest
-from backend.chatbot import ChatBotInit 
-import pandas as pd
+from backend.chatbot import ChatBotInit
 from unittest import mock
 import io
-import sys
-from serial import Serial
+
 
 class TestPredictMethods(unittest.TestCase):
-
     def __init__(self, *args, **kwargs):
         super(TestPredictMethods, self).__init__(*args, **kwargs)
         self.pred = None
 
-
     def test_chatbot_can_be_instantiated(self):
-    	cb = ChatBotInit()
-    	self.assertTrue(cb)
-
+        cb = ChatBotInit()
+        self.assertTrue(cb)
 
     def test_chabot_predict_from_user_input(self):
-    	#reference: https://forum.learncodethehardway.com/t/testing-input-and-print/1757/10
+        # reference: https://forum.learncodethehardway.com/t/testing-input-and-print/1757/10
 
-    	#arrange
-    	cb = ChatBotInit()
-    	msg = 'bye'
-    	exp = None
+        # arrange
+        cb = ChatBotInit()
+        msg = "bye"
+        exp = None
 
-    	original_input = mock.builtins.input
-    	mock.builtins.input = lambda _: msg
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: msg
 
-    	#act
-    	actual = cb.init_chat_cmd()
+        # act
+        actual = cb.init_chat_cmd()
 
-    	#assert
-    	self.assertEqual(actual, exp)
-    	mock.builtins.input = original_input
-
+        # assert
+        self.assertEqual(actual, exp)
+        mock.builtins.input = original_input
 
     def test_chabot_print_prediction_from_user_input(self):
-    	#reference: https://forum.learncodethehardway.com/t/testing-input-and-print/1757/10
+        # reference: https://forum.learncodethehardway.com/t/testing-input-and-print/1757/10
 
-    	#arrange
-    	cb = ChatBotInit()
-    	msg = 'bye'
-    	exp = 'Bye!'
+        # arrange
+        cb = ChatBotInit()
+        msg = "bye"
+        exp = "Bye!"
 
-    	original_input = mock.builtins.input
-    	mock.builtins.input = lambda _: msg
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: msg
 
-    	with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:
-    		cb.init_chat_cmd()
+        with mock.patch("sys.stdout", new=io.StringIO()) as fake_stdout:
+            cb.init_chat_cmd()
 
-    	actual = fake_stdout.getvalue()
+        actual = fake_stdout.getvalue()
 
-    	self.assertIn(exp, actual)
+        self.assertIn(exp, actual)
 
-    	mock.builtins.input = original_input
+        mock.builtins.input = original_input
 
     def test_chabot_print_prediction_from_user_input_not_bye(self):
-    	#arrange
-    	msg = 'any message not bye'
+        # arrange
+        msg = "any message not bye"
 
-    	cb = ChatBotInit()
+        cb = ChatBotInit()
 
-    	original_input = mock.builtins.input
-    	mock.builtins.input = lambda _: msg
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: msg
 
-    	with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:    		
-    		cb.init_chat_cmd(run_once = True)
+        with mock.patch("sys.stdout", new=io.StringIO()) as fake_stdout:
+            cb.init_chat_cmd(run_once=True)
 
-    	actual = fake_stdout.getvalue()
+        actual = fake_stdout.getvalue()
 
-    	self.assertTrue(actual)
+        self.assertTrue(actual)
 
-    	mock.builtins.input = original_input
-
+        mock.builtins.input = original_input
 
     def test_chabot_print_prediction_from_user_input_keystroke(self):
-    	#arrange
-    	msg = u'\u2191' #arrow down
-    	cb = ChatBotInit()
+        # arrange
+        msg = u"\u2191"  # arrow down
+        cb = ChatBotInit()
 
-    	original_input = mock.builtins.input
-    	mock.builtins.input = lambda _: msg
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: msg
 
-    	with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:    		
-    		cb.init_chat_cmd(run_once = True)
+        with mock.patch("sys.stdout", new=io.StringIO()) as fake_stdout:
+            cb.init_chat_cmd(run_once=True)
 
-    	actual = fake_stdout.getvalue()
+        actual = fake_stdout.getvalue()
 
-    	self.assertTrue(actual)
+        self.assertTrue(actual)
 
-    	mock.builtins.input = original_input
-
+        mock.builtins.input = original_input
 
     def test_chabot_print_prediction_from_user_input_ctrl_c(self):
-    	#arrange
-    	msg = u'\u0003' #ctrl + c
-    	cb = ChatBotInit()
+        # arrange
+        msg = u"\u0003"  # ctrl   c
+        cb = ChatBotInit()
 
-    	original_input = mock.builtins.input
-    	mock.builtins.input = lambda _: msg
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: msg
 
-    	with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:    		
-    		cb.init_chat_cmd(run_once = True)
+        with mock.patch("sys.stdout", new=io.StringIO()) as fake_stdout:
+            cb.init_chat_cmd(run_once=True)
 
-    	actual = fake_stdout.getvalue()
+        actual = fake_stdout.getvalue()
 
-    	self.assertTrue(actual)
+        self.assertTrue(actual)
 
-    	mock.builtins.input = original_input
+        mock.builtins.input = original_input
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -3,7 +3,7 @@ from settings import CHATDATA_DIR
 from dataset import Dataset
 from tensorflow.keras.models import load_model
 import gensim
-from utils import save_content_to_log
+from utils import save_content_to_log, emergency_message, save_content_to_file
 import sys
 
 class ChatBotInit:
@@ -29,10 +29,7 @@ class ChatBotInit:
 							pc_answers=self.pc_answers,
 							tokenizer=self.tokenizer
 							)
-
-	def init_chat_win(self, m):
-		return str(self.p.predict(m))
-
+		self.f_html = '/mnt/c/Users/Douglas/trainning/chatbot_for_movies/src/index.html'
 
 	def init_chat_cmd(self, run_once = False):
 
@@ -48,20 +45,18 @@ class ChatBotInit:
 			#TODO save conversation to file_timestamp
 			try:
 				m = input(you_prefix)
-
-				try:
-					if m != 'bye':
-						r = str(self.p.predict(m))
-						print(bot_prefix + r)
-				except Exception as e:
-					print(bot_prefix + 'I cannot understand it. Try again, please!')
-					save_content_to_log(e)
-
-				if run_once == True:
-					m = exit
+				save_content_to_file('<p> you: '+ str(m) +'</p>',self.f_html)
 			except KeyboardInterrupt:
-				stored_exception=sys.exc_info()
-				save_content_to_log(stored_exception)
+				print(bot_prefix + emergency_message())
+				save_content_to_log(sys.exc_info())				
+
+			if m != 'bye':
+				r = str(self.p.predict(m))
+				print(bot_prefix + r)
+				save_content_to_file('<p> bot: '+ str(r) +'</p>', self.f_html)
+
+			if run_once == True:
+				m = exit
 
 		print(bot_prefix + 'Bye!')
 

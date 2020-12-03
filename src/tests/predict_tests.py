@@ -1,6 +1,7 @@
 import unittest
 from backend.predict import Prediction 
 import pandas as pd
+from settings import EMERGENCY_MSG, NAIVE_MSG
 
 class ModelMock():
 
@@ -82,13 +83,13 @@ class TestPredictMethods(unittest.TestCase):
     def test_can_predit_message_not_in_dataframe(self):
         #arrange
         msg = 'this messge is not in dataframe'
-        exp = 'how are you doing?' #the msg with biggest page rank
+        exp = NAIVE_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_not_in_df_but_similar(self):
@@ -106,13 +107,13 @@ class TestPredictMethods(unittest.TestCase):
     def test_can_predit_message_with_all_special_char(self):
         #arrange
         msg = '$%¨¨&*()' #pre_processing will clean all
-        exp = 'how are you doing?' #biggest page rank
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_with_some_special_char(self):
@@ -142,13 +143,13 @@ class TestPredictMethods(unittest.TestCase):
     def test_can_predit_message_when_is_string_of_number(self):
         #arrange
         msg = '123456'
-        exp = 'how are you doing?' #biggest page rank
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_when_has_some_numbers(self):
@@ -178,37 +179,37 @@ class TestPredictMethods(unittest.TestCase):
     def test_can_predit_message_empty(self):
         #arrange
         msg = ''
-        exp = 'how are you doing?'
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_null(self):
         #arrange
         msg = None
-        exp = 'how are you doing?'
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_is_number(self):
         #arrange
         msg = 123456
-        exp = 'how are you doing?'
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)
 
         #assert
-        self.assertEqual(actual, exp)
+        self.assertTrue(actual in exp)
 
 if __name__ == '__main__':
     unittest.main()
