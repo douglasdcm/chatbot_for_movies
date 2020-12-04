@@ -1,5 +1,5 @@
 from predict import Prediction
-from settings import CHATDATA_DIR
+from settings import CHATDATA_DIR, BOT_PREFIX, YOU_PREFIX
 from dataset import Dataset
 from tensorflow.keras.models import load_model
 import gensim
@@ -34,8 +34,6 @@ class ChatBotInit:
 	def init_chat_cmd(self, run_once = False):
 
 		m = None
-		you_prefix = '  You: '
-		bot_prefix = '  Bot:  '
 		exit = 'bye'
 
 		print('I am ready to talk.')
@@ -44,20 +42,23 @@ class ChatBotInit:
 		while(m != exit):
 			#TODO save conversation to file_timestamp
 			try:
-				m = input(you_prefix)
+				m = input(YOU_PREFIX)
 				save_content_to_file('<p> you: '+ str(m) +'</p>',self.f_html)
 			except KeyboardInterrupt:
-				print(bot_prefix + emergency_message())
+				print(BOT_PREFIX + emergency_message())
 				save_content_to_log(sys.exc_info())				
 
 			if m != 'bye':
 				r = str(self.p.predict(m))
-				print(bot_prefix + r)
+				print(BOT_PREFIX + r)
 				save_content_to_file('<p> bot: '+ str(r) +'</p>', self.f_html)
 
 			if run_once == True:
 				m = exit
 
-		print(bot_prefix + 'Bye!')
+		print(BOT_PREFIX + 'Bye!')
+
+	def get_conversation(self, message):
+		return str(self.p.predict(message))
 
 

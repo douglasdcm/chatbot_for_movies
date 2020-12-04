@@ -1,6 +1,7 @@
 from pre_processing import PreProcessing
 from similarity import Similarity
 from utils import emergency_message
+from settings import BOT_PREFIX
 
 class Prediction:
 
@@ -27,7 +28,7 @@ class Prediction:
 		try:
 			msg = self.pp.pre_processing_text(msg)
 		except Exception as e:
-			print(bot_prefix + emergency_message())
+			print(BOT_PREFIX + emergency_message())
 			save_content_to_log(e)
 
 		if msg == '' or msg is None:
@@ -42,10 +43,8 @@ class Prediction:
 		else:
 			pc = self.pc_answers
 
-		print(res)
-
 		conversations = self.s.return_conversation_by_cossine(msg, res)
-		print('return_conversation_by_cossine')
+		
 		conversations = self.s.return_conversation_by_page_rank(msg, conversations,
 																page_compute=pc,
 																reverse=True)		

@@ -1,5 +1,5 @@
-This is the history of changes made during the traning of the model.
-The information bellow explains the change made, if the change was kept, the accuracy of the model for the given changing and whether the accuracy increased or decreased with the change.
+This is the history of changes made during the traning of the model (Keras).
+The information bellow explains: the change made; if the change was kept; the accuracy of the model for the given changing; and whether the accuracy increased or decreased with the change.
 ------------------------
 Labels
 x: change not kept
@@ -19,7 +19,7 @@ WISH LIST
 ------------------------
 
 reuse last model if accuracy is good
-re-traing using slots of data
+re-traing using slots of data(k-folds)
 cross-validation
 cluster topics
 recommend the returning msg based on the profile of the entry msg
@@ -32,12 +32,6 @@ replace negative messages
 ------------------------
 HISTORY
 ------------------------
-
-00xx: f - ipsum lorem
-acc 0.xx u val_acc 0.x
-
-0010: f - remove entities
-acc 0.xx u val_acc 0.x
 
 0010: x - use grid search to find better parameters
 acc 0.81 d val_acc 0.81

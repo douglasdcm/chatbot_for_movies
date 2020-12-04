@@ -20,19 +20,13 @@ class Similarity:
 		Get the first item in the dict
 		"""
 
-		print('get_the_next_conversation_1')
-
 		keys_view = conversations.keys()
 		keys_iterator = iter(keys_view)
 		try:
 			conversation = next(keys_iterator)
-			print('get_the_next_conversation_2')
 		except Exception as e:
 			save_content_to_log(e)
-			print('get_the_next_conversation_3')
 			return naive_massage()
-
-		print('get_the_next_conversation_4')
 
 		return list(df[df['msg_pre_processed'] == conversation]['msg_2'])[0]
 
@@ -40,14 +34,10 @@ class Similarity:
 		"""
 		Return a dictionary of message and similarity sorted by highter similarity
 		"""
-		print('return_conversation_by_page_rank_1')
+
 		conversations = self.pp.normalize_dictionary(conversations)
-		print('return_conversation_by_page_rank_2')
-		
-		print('return_conversation_by_page_rank_3')
 
 		conversations = {k: page_compute[k] + v for k, v in conversations.items()}
-		print('return_conversation_by_page_rank_4')
 
 		return {k: v for k, v in sorted(conversations.items(), key=lambda item: item[1], reverse=reverse)}
 

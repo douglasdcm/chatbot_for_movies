@@ -26,3 +26,6 @@ NAIVE_MSG = ['I could not find a good answer for your message...',
 			'Your message is very clever to my poor processor...',
 			'I cannot answer this',
 			'My friend, I am just chat bot, not a human...']
+
+BOT_PREFIX = '  Bot:  '
+YOU_PREFIX = '  You: '

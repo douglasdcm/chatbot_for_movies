@@ -76,8 +76,6 @@ class PreProcessing:
 
         zero_dict = {k: 0.0 for k, v in dic.items() if not isinstance(v, np.floating) }
 
-        #print(dic['take easy everythings okay'])
-
         for v in dic.values():
             if not isinstance(v, np.floating):
                 return zero_dict
@@ -88,8 +86,5 @@ class PreProcessing:
             return zero_dict
         
         factor = 1.0 / den
-
-        print('normalize_dictionary')
-        print(factor)
 
         return {k: (v * factor) for k, v in dic.items()}
