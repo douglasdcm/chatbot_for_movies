@@ -1,6 +1,6 @@
 from pre_processing import PreProcessing
 from similarity import Similarity
-from utils import emergency_message
+from utils import emergency_message, save_content_to_log
 from settings import BOT_PREFIX
 
 class Prediction:

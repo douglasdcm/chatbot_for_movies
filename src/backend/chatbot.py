@@ -3,7 +3,7 @@ from settings import CHATDATA_DIR, BOT_PREFIX, YOU_PREFIX
 from dataset import Dataset
 from tensorflow.keras.models import load_model
 import gensim
-from utils import save_content_to_log, emergency_message, save_content_to_file
+from utils import save_content_to_log, emergency_message
 import sys
 
 class ChatBotInit:
