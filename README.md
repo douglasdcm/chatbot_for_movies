@@ -79,7 +79,19 @@ sh coverage.sh
 
 The coverage report is generated in htmlcov/index.html
 
-The current coverage is
+The current coverage is:
+Name                        Stmts   Miss  Cover
+-----------------------------------------------
+backend/__init__.py             0      0   100%
+backend/chatbot.py             42      4    90%
+backend/dataset.py             28      0   100%
+backend/pre_processing.py      49      0   100%
+backend/predict.py             33      3    91%
+backend/similarity.py          46      0   100%
+backend/utils.py               18      0   100%
+settings.py                    15      0   100%
+-----------------------------------------------
+TOTAL                         231      7    97%
 
 
 ## Attention

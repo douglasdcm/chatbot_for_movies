@@ -1,2 +1,6 @@
 [run]
 omit = tests/*
+	# run files
+	run_*.py
+	#app server
+	app.py
