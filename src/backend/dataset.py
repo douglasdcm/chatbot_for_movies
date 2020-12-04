@@ -11,7 +11,9 @@ class Dataset:
         self.pp = PreProcessing()
 
     def import_dataset(self):
-        return pd.read_csv(DATA_FILE, delimiter="\t", quoting=3, encoding="ISO-8859-2")
+        messages = pd.read_csv(DATA_FILE, delimiter="\t", quoting=3, encoding="ISO-8859-2")
+        messages.columns = ['msg_line', 'user_id', 'movie_id', 'msg', 'msg_pre_processed', 'msg_2', 'target']
+        return messages
 
     def get_questions(self, messages):
         return set(messages[messages["target"] == 1]["msg_pre_processed"].astype(str))

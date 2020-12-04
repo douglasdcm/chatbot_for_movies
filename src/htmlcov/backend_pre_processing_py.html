@@ -21,8 +21,8 @@
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            51 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">51 run</button>
+            49 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">49 run</button>
             <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
@@ -129,29 +129,24 @@
     <p id="t76" class="pln"><span class="n"><a href="#t76">76</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t77" class="run"><span class="n"><a href="#t77">77</a></span><span class="t">        <span class="nam">zero_dict</span> <span class="op">=</span> <span class="op">{</span><span class="nam">k</span><span class="op">:</span> <span class="num">0.0</span> <span class="key">for</span> <span class="nam">k</span><span class="op">,</span> <span class="nam">v</span> <span class="key">in</span> <span class="nam">dic</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span> <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">v</span><span class="op">,</span> <span class="nam">np</span><span class="op">.</span><span class="nam">floating</span><span class="op">)</span> <span class="op">}</span>&nbsp;</span><span class="r"></span></p>
     <p id="t78" class="pln"><span class="n"><a href="#t78">78</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t79" class="pln"><span class="n"><a href="#t79">79</a></span><span class="t">        <span class="com">#print(dic['take easy everythings okay'])</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t80" class="pln"><span class="n"><a href="#t80">80</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t81" class="run"><span class="n"><a href="#t81">81</a></span><span class="t">        <span class="key">for</span> <span class="nam">v</span> <span class="key">in</span> <span class="nam">dic</span><span class="op">.</span><span class="nam">values</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t82" class="run"><span class="n"><a href="#t82">82</a></span><span class="t">            <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">v</span><span class="op">,</span> <span class="nam">np</span><span class="op">.</span><span class="nam">floating</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t83" class="run"><span class="n"><a href="#t83">83</a></span><span class="t">                <span class="key">return</span> <span class="nam">zero_dict</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t79" class="run"><span class="n"><a href="#t79">79</a></span><span class="t">        <span class="key">for</span> <span class="nam">v</span> <span class="key">in</span> <span class="nam">dic</span><span class="op">.</span><span class="nam">values</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t80" class="run"><span class="n"><a href="#t80">80</a></span><span class="t">            <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">v</span><span class="op">,</span> <span class="nam">np</span><span class="op">.</span><span class="nam">floating</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t81" class="run"><span class="n"><a href="#t81">81</a></span><span class="t">                <span class="key">return</span> <span class="nam">zero_dict</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t82" class="pln"><span class="n"><a href="#t82">82</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t83" class="run"><span class="n"><a href="#t83">83</a></span><span class="t">        <span class="nam">den</span> <span class="op">=</span> <span class="nam">math</span><span class="op">.</span><span class="nam">fsum</span><span class="op">(</span><span class="nam">dic</span><span class="op">.</span><span class="nam">values</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t84" class="pln"><span class="n"><a href="#t84">84</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t85" class="run"><span class="n"><a href="#t85">85</a></span><span class="t">        <span class="nam">den</span> <span class="op">=</span> <span class="nam">math</span><span class="op">.</span><span class="nam">fsum</span><span class="op">(</span><span class="nam">dic</span><span class="op">.</span><span class="nam">values</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t86" class="pln"><span class="n"><a href="#t86">86</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t87" class="run"><span class="n"><a href="#t87">87</a></span><span class="t">        <span class="key">if</span> <span class="nam">den</span> <span class="op">==</span> <span class="num">0</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t88" class="run"><span class="n"><a href="#t88">88</a></span><span class="t">            <span class="key">return</span> <span class="nam">zero_dict</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t85" class="run"><span class="n"><a href="#t85">85</a></span><span class="t">        <span class="key">if</span> <span class="nam">den</span> <span class="op">==</span> <span class="num">0</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t86" class="run"><span class="n"><a href="#t86">86</a></span><span class="t">            <span class="key">return</span> <span class="nam">zero_dict</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t87" class="pln"><span class="n"><a href="#t87">87</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t88" class="run"><span class="n"><a href="#t88">88</a></span><span class="t">        <span class="nam">factor</span> <span class="op">=</span> <span class="num">1.0</span> <span class="op">/</span> <span class="nam">den</span>&nbsp;</span><span class="r"></span></p>
     <p id="t89" class="pln"><span class="n"><a href="#t89">89</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t90" class="run"><span class="n"><a href="#t90">90</a></span><span class="t">        <span class="nam">factor</span> <span class="op">=</span> <span class="num">1.0</span> <span class="op">/</span> <span class="nam">den</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t91" class="pln"><span class="n"><a href="#t91">91</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t92" class="run"><span class="n"><a href="#t92">92</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="str">'normalize_dictionary'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t93" class="run"><span class="n"><a href="#t93">93</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="nam">factor</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t94" class="pln"><span class="n"><a href="#t94">94</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t95" class="run"><span class="n"><a href="#t95">95</a></span><span class="t">        <span class="key">return</span> <span class="op">{</span><span class="nam">k</span><span class="op">:</span> <span class="op">(</span><span class="nam">v</span> <span class="op">*</span> <span class="nam">factor</span><span class="op">)</span> <span class="key">for</span> <span class="nam">k</span><span class="op">,</span> <span class="nam">v</span> <span class="key">in</span> <span class="nam">dic</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">}</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t90" class="run"><span class="n"><a href="#t90">90</a></span><span class="t">        <span class="key">return</span> <span class="op">{</span><span class="nam">k</span><span class="op">:</span> <span class="op">(</span><span class="nam">v</span> <span class="op">*</span> <span class="nam">factor</span><span class="op">)</span> <span class="key">for</span> <span class="nam">k</span><span class="op">,</span> <span class="nam">v</span> <span class="key">in</span> <span class="nam">dic</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">}</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
-            created at 2020-12-03 19:16 -0300
+            created at 2020-12-04 10:26 -0300
         </p>
     </div>
 </div>
