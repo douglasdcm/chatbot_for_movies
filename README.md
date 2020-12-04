@@ -77,6 +77,18 @@ cd src/
 sh coverage.sh
 ```
 
+The coverage report is generated in htmlcov/index.html
+
+The current coverage is
+
+
+## Attention
+
+- This chat bot was developed using WSL Ubuntu, so it is not guaranteed to work on different environment
+- To retraing the chat bot it is necessary use the notebooks following the order of the files 001, 002... and maybe the notebooks will need to be adapeted dependin on your dataset
+- The notebooks generate the 3 datasets used by the chat bot: movie_lines_pre_processed_for_test.tvs, page_rank_question.txt and page_rank_answers.txt. If retraining, get the generated files in notebooks/chatdata and put in src/chatdata
+- This chat bot was developed using 30000 messages due to performance issues, so pay attention to your dataset if you are retrainignthe chat bot
+
 
 ## References
 - Dataset https://www.kaggle.com/Cornell-University/movie-dialog-corpus?select=movie_lines.tsv
