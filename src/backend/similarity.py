@@ -80,15 +80,5 @@ class Similarity:
 		
 		"""
 		result = dict(zip(msg_list, similarity))
-
-		"""
-		result = {}
-		for key in msg_list:
-			for value in similarity:
-				result[key] = value
-				similarity.remove(value)
-				break
-				"""
-
-		#return {k: v for k, v in sorted(result.items(), key=lambda item: item[1], reverse=False)}
+		
 		return result

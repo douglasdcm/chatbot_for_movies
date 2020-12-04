@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import os, sys
 from settings import ROOT_DIR
 sys.path.append(ROOT_DIR + '/backend/')
@@ -23,7 +22,7 @@ def send():
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
 
 
-        res = cb.init_chat_win(msg)
+        res = cb.get_conversation(msg)
         ChatLog.insert(END, "Bot: " + res + '\n\n')
 
         ChatLog.config(state=DISABLED)

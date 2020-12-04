@@ -1,9 +1,13 @@
 from settings import ROOT_DIR, EMERGENCY_MSG, NAIVE_MSG, LOG_FILE
 import random
+from datetime import datetime
 
 def save_content_to_log(text: str):
     file = open(LOG_FILE,'a') 
-    file.write('\n--------------\n')
+
+    now = datetime.now()
+    file.write(now.strftime("%d/%m/%Y %H:%M:%S") + ' --------------\n')
+
     file.write( repr(text) )
     file.close()
 

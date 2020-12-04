@@ -48,6 +48,14 @@ pip3 install -r requirements.txt
 ```
 Note: for Windows, install the Xming and export the DISPLAY. The server must be running before launch the UI. More details in this ticket: https://stackoverflow.com/questions/39804366/tclerror-no-display-name-and-no-display-environment-variable-on-windows-10-bas/39805613.
 
+## Running the app server
+
+```bash
+cd scr/
+python3 app.py
+```
+access the url informed by the server. For example http://127.0.0.1:5000/
+
 ## Running the chatbot in CLI
 
 ```bash
@@ -57,11 +65,12 @@ python3 run_cli.py
 ## Running the chatbot in UI
 
 ```bash
+export DISPLAY=0.0
 cd scr/
 python3 run_ui.py
 ```
 
-## Running the testsand coverage
+## Running the tests and coverage
 
 ```bash
 cd src/
