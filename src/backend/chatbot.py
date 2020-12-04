@@ -29,7 +29,6 @@ class ChatBotInit:
 							pc_answers=self.pc_answers,
 							tokenizer=self.tokenizer
 							)
-		self.f_html = '/mnt/c/Users/Douglas/trainning/chatbot_for_movies/src/index.html'
 
 	def init_chat_cmd(self, run_once = False):
 
@@ -43,7 +42,7 @@ class ChatBotInit:
 			#TODO save conversation to file_timestamp
 			try:
 				m = input(YOU_PREFIX)
-				save_content_to_file('<p> you: '+ str(m) +'</p>',self.f_html)
+				save_content_to_log('you: '+ str(m))
 			except KeyboardInterrupt:
 				print(BOT_PREFIX + emergency_message())
 				save_content_to_log(sys.exc_info())				
@@ -51,7 +50,7 @@ class ChatBotInit:
 			if m != 'bye':
 				r = str(self.p.predict(m))
 				print(BOT_PREFIX + r)
-				save_content_to_file('<p> bot: '+ str(r) +'</p>', self.f_html)
+				save_content_to_log('bot: '+ str(r))
 
 			if run_once == True:
 				m = exit
