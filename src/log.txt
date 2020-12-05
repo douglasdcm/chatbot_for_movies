@@ -5,4 +5,70 @@ StopIteration()04/12/2020 10:42:08 --------------
 StopIteration()04/12/2020 10:42:55 --------------
 StopIteration()04/12/2020 11:21:38 --------------
 StopIteration()04/12/2020 11:26:14 --------------
-StopIteration()
+StopIteration()04/12/2020 14:27:24 --------------
+'you: bye'04/12/2020 14:27:24 --------------
+'you: bye'04/12/2020 14:27:25 --------------
+'you: \x03'04/12/2020 14:27:25 --------------
+'bot: If you are lost you can type "bye" anytime to leave'04/12/2020 14:27:25 --------------
+'you: ↑'04/12/2020 14:27:25 --------------
+'bot: I cannot understand it. Try again, please!'04/12/2020 14:27:25 --------------
+'you: any message not bye'04/12/2020 14:27:43 --------------
+'bot: Found it?'04/12/2020 14:27:43 --------------
+StopIteration()04/12/2020 21:03:38 --------------
+'you: bye'04/12/2020 21:03:38 --------------
+'you: bye'04/12/2020 21:03:39 --------------
+'you: \x03'04/12/2020 21:03:39 --------------
+'bot: My brain could not process this message... Try again, please!'04/12/2020 21:03:39 --------------
+'you: ↑'04/12/2020 21:03:39 --------------
+'bot: Sorry, my Spanish is not good... Can you explain it in English?'04/12/2020 21:03:40 --------------
+'you: any message not bye'04/12/2020 21:04:07 --------------
+'bot: Barbatus?'04/12/2020 21:04:08 --------------
+StopIteration()04/12/2020 21:22:00 --------------
+'  You: exit'04/12/2020 21:22:00 --------------
+'  You: exit'04/12/2020 21:22:01 --------------
+'  You: \x03'04/12/2020 21:22:01 --------------
+'  You: ↑'04/12/2020 21:22:02 --------------
+'  You: any message not bye'04/12/2020 21:24:57 --------------
+'  You: exit'04/12/2020 21:24:57 --------------
+'  You: exit'04/12/2020 21:24:57 --------------
+'  You: \x03'04/12/2020 21:24:57 --------------
+'  Bot:  I would like to hear more about it'04/12/2020 21:24:58 --------------
+'  You: ↑'04/12/2020 21:24:58 --------------
+'  Bot:  My brain could not process this message... Try again, please!'04/12/2020 21:24:58 --------------
+'  You: any message not bye'04/12/2020 21:25:15 --------------
+'  Bot:  Found it?'04/12/2020 21:30:57 --------------
+'  You: exit'04/12/2020 21:30:57 --------------
+'  You: exit'04/12/2020 21:30:58 --------------
+'  You: \x03'04/12/2020 21:30:58 --------------
+'  Bot:  I cannot understand it. Try again, please!'04/12/2020 21:30:59 --------------
+'  You: ↑'04/12/2020 21:30:59 --------------
+'  Bot:  My brain could not process this message... Try again, please!'04/12/2020 21:30:59 --------------
+'  You: any message not bye'04/12/2020 21:31:20 --------------
+'  Bot:  Barbatus?'04/12/2020 21:32:19 --------------
+'  You: exit'04/12/2020 21:32:20 --------------
+'  You: exit'04/12/2020 21:32:20 --------------
+'  You: \x03'04/12/2020 21:32:20 --------------
+'  Bot:  Sorry, my Spanish is not good... Can you explain it in English?'04/12/2020 21:32:21 --------------
+'  You: ↑'04/12/2020 21:32:21 --------------
+'  Bot:  I cannot understand it. Try again, please!'04/12/2020 21:32:21 --------------
+'  You: any message not bye'04/12/2020 21:32:39 --------------
+"  Bot:  But it's not funny now."04/12/2020 21:32:55 --------------
+'  You: hey'04/12/2020 21:33:09 --------------
+'  Bot:  Are you lost?'04/12/2020 21:33:34 --------------
+'  You: exit'04/12/2020 21:37:04 --------------
+'  You: exit'04/12/2020 21:37:04 --------------
+'  You: exit'04/12/2020 21:37:05 --------------
+'  You: \x03'04/12/2020 21:37:05 --------------
+'  Bot:  Maybe there is some problem in processor right now. Sorry...'04/12/2020 21:37:05 --------------
+'  You: ↑'04/12/2020 21:37:05 --------------
+'  Bot:  My brain could not process this message... Try again, please!'04/12/2020 21:37:06 --------------
+'  You: any message not bye'04/12/2020 21:37:23 --------------
+'  Bot:  Barbatus?'04/12/2020 21:38:33 --------------
+'  You: exit'04/12/2020 21:38:33 --------------
+'  You: exit'04/12/2020 21:38:34 --------------
+'  You: \x03'04/12/2020 21:38:34 --------------
+'  Bot:  My brain could not process this message... Try again, please!'04/12/2020 21:38:34 --------------
+'  You: ↑'04/12/2020 21:38:34 --------------
+'  Bot:  Talk more about it'04/12/2020 21:38:35 --------------
+'  You: any message not bye'04/12/2020 21:38:52 --------------
+'  Bot:  Barbatus?'

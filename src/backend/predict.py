@@ -28,8 +28,8 @@ class Prediction:
 		try:
 			msg = self.pp.pre_processing_text(msg)
 		except Exception as e:
-			print(BOT_PREFIX + emergency_message())
 			save_content_to_log(e)
+			return BOT_PREFIX + emergency_message()
 
 		if msg == '' or msg is None:
 			return emergency_message()

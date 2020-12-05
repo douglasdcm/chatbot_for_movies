@@ -19,7 +19,7 @@ EMERGENCY_MSG = ['I cannot understand it. Try again, please!',
 				'Talk more about it',
 				'Can you explain it?',
 				'My brain could not process this message... Try again, please!',
-				'If you are lost you can type "bye" anytime to leave'
+				'Maybe there is some problem in processor right now. Sorry...'
 				]
 
 NAIVE_MSG = ['I could not find a good answer for your message...',

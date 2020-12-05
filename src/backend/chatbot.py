@@ -3,7 +3,7 @@ from settings import CHATDATA_DIR, BOT_PREFIX, YOU_PREFIX
 from dataset import Dataset
 from tensorflow.keras.models import load_model
 import gensim
-from utils import save_content_to_log, emergency_message
+from utils import save_content_to_log, emergency_message, save_content_to_log_file
 import sys
 
 class ChatBotInit:
@@ -33,24 +33,25 @@ class ChatBotInit:
 	def init_chat_cmd(self, run_once = False):
 
 		m = None
-		exit = 'bye'
+		exit = 'exit'
 
 		print('I am ready to talk.')
-		print(' Tip: You can type \"bye\" anytime to leave.')
+		print(' Tip: You can type \"exit\" (lowercase) anytime to leave.')
 
 		while(m != exit):
 			#TODO save conversation to file_timestamp
 			try:
 				m = input(YOU_PREFIX)
-				save_content_to_log('you: '+ str(m))
+				save_content_to_log_file(YOU_PREFIX + str(m))
+
 			except KeyboardInterrupt:
 				print(BOT_PREFIX + emergency_message())
 				save_content_to_log(sys.exc_info())				
 
-			if m != 'bye':
+			if m != exit:
 				r = str(self.p.predict(m))
 				print(BOT_PREFIX + r)
-				save_content_to_log('bot: '+ str(r))
+				save_content_to_log_file(BOT_PREFIX + str(r))
 
 			if run_once == True:
 				m = exit

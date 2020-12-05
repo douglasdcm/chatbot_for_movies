@@ -18,7 +18,7 @@ class TestPredictMethods(unittest.TestCase):
 
         # arrange
         cb = ChatBotInit()
-        msg = "bye"
+        msg = "exit"
         exp = None
 
         original_input = mock.builtins.input
@@ -36,7 +36,7 @@ class TestPredictMethods(unittest.TestCase):
 
         # arrange
         cb = ChatBotInit()
-        msg = "bye"
+        msg = "exit"
         exp = "Bye!"
 
         original_input = mock.builtins.input

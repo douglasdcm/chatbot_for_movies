@@ -53,7 +53,8 @@ class TestPredictMethods(unittest.TestCase):
                                       ['maybe I am helping','maybe what?', 'maybe'],
                                       ['test are you doing?','end of line','test are you doing'],
                                       ['$%¨¨&*()','special character','$%¨¨&*()'],
-                                      ['123456','number character','123456']
+                                      ['123456','number character','123456'],
+                                      ['a','one character','a']
                                 ]) 
 
         model = ModelMock()
@@ -174,6 +175,17 @@ class TestPredictMethods(unittest.TestCase):
 
         #assert
         self.assertEqual(actual, exp)
+
+    def test_can_predit_message_one_character(self):
+        #arrange
+        msg = 'a'
+        exp = NAIVE_MSG
+
+        #act
+        actual = self.pred.predict(msg)
+
+        #assert
+        self.assertTrue(actual in exp)
 
 
     def test_can_predit_message_empty(self):
