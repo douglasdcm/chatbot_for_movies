@@ -48,6 +48,39 @@ class PreProcessing:
         
         #remove punctuation
         corpus = [t for t in corpus if t not in string.punctuation]
+
+        #remove stopwords
+        stopwords_ = stopwords.words("english")
+        corpus = [t for t in corpus if t not in stopwords_]
+        
+        corpus = ' '.join(corpus)
+
+        return corpus
+
+    def pre_processing_text_for_neural_network(self, corpus):
+        #remove html tags
+        corpus = re.sub(r'<.*?>', '', str(corpus))
+        
+        #remove non-alphanumeric characters
+        corpus = re.sub(r'[^a-z A-Z 0-9 \s]', '', str(corpus))
+        
+        #remove duplicated spaces
+        corpus = re.sub(r' +', ' ', str(corpus))
+
+        #remove numbers
+        corpus = re.sub("\d+", "", corpus)
+        
+        #capitalization
+        corpus = corpus.lower()
+        
+        #tokenization
+        corpus = re.findall(r"\w+(?:'\w+)?|[^\w\s]", corpus)
+        
+        #lammatization
+        corpus = [self.lemmatizer.lemmatize(c, self.get_wordnet_pos(c)) for c in corpus]
+        
+        #remove punctuation
+        corpus = [t for t in corpus if t not in string.punctuation]
         
         corpus = ' '.join(corpus)
 

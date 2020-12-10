@@ -26,15 +26,16 @@ class Prediction:
 			return emergency_message()
 			
 		try:
-			msg = self.pp.pre_processing_text(msg)
+			msg = self.pp.pre_processing_text_for_similarity(msg)
+			msg_nn = self.pp.pre_processing_text_for_neural_network()
 		except Exception as e:
 			save_content_to_log(e)
-			return BOT_PREFIX + emergency_message()
+			return BOT_PREFIX + emergency_message() + '\n' + str(e)
 
 		if msg == '' or msg is None:
 			return emergency_message()
 
-		p = self.tokenizer.texts_to_matrix([msg])
+		p = self.tokenizer.texts_to_matrix([msg_nn])
 
 		res = self.model.predict(p)
 

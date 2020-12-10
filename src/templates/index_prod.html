@@ -29,7 +29,7 @@
 
 		// ajax the JSON to the server
 		$.ajax(settings).done(function (response) {
-			document.getElementById("response").innerHTML = 'BOT: ' + response
+			document.getElementById("response").innerHTML = response
 		});
 		// stop link reloading the page
 	 event.preventDefault();
@@ -101,6 +101,21 @@
 	  width: 80%;
 	}
 
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	td, th {	  
+	  text-align: left;
+	  padding: 6px;
+	}
+
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
+
 	/* Style the footer */
 	footer {
 	  background-color: #555;
@@ -126,13 +141,56 @@
 	<br>
 	<div>
 		<header>
-			Work in progress - This is a simple chat bot. I am not still so fast, please be pattient (:<br /><br />
-			
-		</header>
-		
+			[Sandbox] I am a simple chat bot not so fast yet, please be pattient (:<br /><br />			
+		<h6>*This is based on movie scripts, so try to talk about one of the genres.</h6>
+		<h6><a href="https://github.com/douglasdcm/chatbot_for_movies">Check the code on Git Hub repository</a></h6>
+		</header>		
 		  <nav>
 			<ul>
-			  <a href="https://github.com/douglasdcm/chatbot_for_movies">Git Hub repository</a>
+			  
+			  <br>
+			  <table>
+			  <tr>
+			    <th>Genre</th>
+			    <th></th>
+			    <th></th>
+			  </tr>
+			  <tr>
+			    <td>action</td>
+			    <td>adventure</td>
+			    <td>animation</td>
+			  </tr>
+			  <tr>
+			    <td>biography</td>
+			    <td>comedy</td>
+			    <td>crime</td>
+			  </tr>
+			  <tr>
+			    <td>drama</td>
+			    <td>family</td>
+			    <td>fantasy</td>
+			  </tr>
+			  <tr>
+			    <td>history</td>
+			    <td>horror</td>
+			    <td>music</td>
+			  </tr>
+			  <tr>
+			    <td>musical</td>
+			    <td>mystery</td>
+			    <td>romance</td>
+			  </tr>
+			  <tr>
+			    <td>sci-fi</td>
+			    <td>sport</td>
+			    <td>thriller</td>
+			  </tr>
+			  <tr>
+			    <td>war</td>
+			    <td>western</td>
+			    <td></td>
+			  </tr>
+			</table>
 			</ul>
 		  </nav>
 
