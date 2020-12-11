@@ -39,6 +39,7 @@ This processed is done for all messages and the message with the highest value (
 - math
 
 ## Interface
+The chat bot is deployed at https://chatbotnaive.herokuapp.com/, so try this :)
 ![alt text](https://i.ibb.co/8BsCQ8h/chatbotui.png)
 
 ## Installing the chatbot locally
