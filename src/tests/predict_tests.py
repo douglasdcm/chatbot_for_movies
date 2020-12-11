@@ -36,22 +36,31 @@ class TestPredictMethods(unittest.TestCase):
 
     def setUp(self):
 
-        questions = set(['what', 'when', 'how', 'who'])
-        answers = set(['yes', 'no', 'maybe', 'never'])
+        what = 'what music'
+        when = 'when movie'
+        how = 'how house'
+        who = 'who'
+        yes = 'yes know lesson'
+        no = 'no firend'
+        maybe = 'maybe solve problem'
+        never = 'never'
+
+        questions = set([what, when, how, who])
+        answers = set([yes, no, maybe, never])
 
         #the sum of page computes must tend to 1
-        pc_questions = {'what': 0.7, 'when': 0.2, 'how': 0.1, 'who': 0.0}
-        pc_answers = {'yes': 0.5, 'no': 0.25, 'maybe': 0.25, 'never': 0.0}    
+        pc_questions = {what: 0.7, when: 0.2, how: 0.1, who: 0.0}
+        pc_answers = {yes: 0.5, no: 0.25, maybe: 0.25, never: 0.0}    
 
         messages = pd.DataFrame(columns=['msg', 'msg_2', 'msg_pre_processed'],
-                                data=[['what are you doing?','never mind','what'],
-                                      ['never mind', 'when are you doing?','never'],
-                                      ['when are you doing?','yes I know','when'],
-                                      ['yes I know', 'how are you doing?','yes'],
-                                      ['how are you doing?', 'no chance', 'how'],
-                                      ['no chance','test are you doing?', 'no'],
-                                      ['maybe I am helping','maybe what?', 'maybe'],
-                                      ['test are you doing?','end of line','test are you doing'],
+                                data=[['what are you doing for music?','never mind', what],
+                                      ['never mind', 'when are you doing?', never],
+                                      ['when are you doing for movie?','yes I know', when],
+                                      ['yes I know the lesson', 'how are you doing?', yes],
+                                      ['how are you doing the house?', 'no chance', how],
+                                      ['no chance my friend','test are you doing?', no],
+                                      ['maybe I am helping to solve the problem','maybe what?', maybe],
+                                      ['test are you doing in the company?','end of line','test are you doing company'],
                                       ['$%¨¨&*()','special character','$%¨¨&*()'],
                                       ['123456','number character','123456'],
                                       ['a','one character','a']
@@ -71,7 +80,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_can_predit_message_in_dataframe(self):
         #arrange
-        msg = 'yes'
+        msg = 'yes I know the lesson'
         exp = 'how are you doing?'
 
         #act
@@ -131,7 +140,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_can_predit_message_when_is_question(self):
         #arrange
-        msg = 'how are you boy qqq' #qqq is the '?'
+        msg = 'how are you doing the house boy qqq' #qqq is the '?'
         exp = 'no chance'
 
         #act
@@ -155,7 +164,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_can_predit_message_when_has_some_numbers(self):
         #arrange
-        msg = 'when 123456 qqq' #qqq is the '?'
+        msg = 'when I saw the movie 123456 times qqq' #qqq is the '?'
         exp = 'yes I know'
 
         #act
@@ -167,7 +176,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_can_predit_message_upper_case(self):
         #arrange
-        msg = 'MAYBE'
+        msg = 'MAYBE IS A PROBLEM'
         exp = 'maybe what?'
 
         #act
@@ -179,7 +188,7 @@ class TestPredictMethods(unittest.TestCase):
     def test_can_predit_message_one_character(self):
         #arrange
         msg = 'a'
-        exp = NAIVE_MSG
+        exp = EMERGENCY_MSG
 
         #act
         actual = self.pred.predict(msg)

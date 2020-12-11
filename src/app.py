@@ -1,6 +1,6 @@
 #!flask/bin/python
 import os, sys
-from settings import ROOT_DIR
+from settings import ROOT_DIR, BOT_PREFIX
 sys.path.append(ROOT_DIR + '/backend/')
 sys.path.append(ROOT_DIR + '/frontend/')
 
@@ -21,7 +21,7 @@ def output():
 def worker():
 
 	message = request.json['message']
-	return cb.get_conversation(message)
+	return BOT_PREFIX + cb.get_conversation(message)
 
 if __name__ == '__main__':
 	# run!

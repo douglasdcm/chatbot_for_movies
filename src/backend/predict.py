@@ -27,7 +27,7 @@ class Prediction:
 			
 		try:
 			msg = self.pp.pre_processing_text_for_similarity(msg)
-			msg_nn = self.pp.pre_processing_text_for_neural_network()
+			msg_nn = self.pp.pre_processing_text_for_neural_network(msg)
 		except Exception as e:
 			save_content_to_log(e)
 			return BOT_PREFIX + emergency_message() + '\n' + str(e)

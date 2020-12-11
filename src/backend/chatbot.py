@@ -1,5 +1,5 @@
 from predict import Prediction
-from settings import CHATDATA_DIR, BOT_PREFIX, YOU_PREFIX
+from settings import CHATDATA_DIR, BOT_PREFIX, YOU_PREFIX, CHATBOT_MODEL
 from dataset import Dataset
 from tensorflow.keras.models import load_model
 from utils import save_content_to_log, emergency_message, save_content_to_log_file
@@ -10,7 +10,7 @@ class ChatBotInit:
 	def __init__(self):		
 
 		#TODO move to outside
-		self.model_name = 'chatbot_model.h5'
+		self.model_name = CHATBOT_MODEL
 		self.embedding_file = 'embedding_wiki_100d_pt.txt'
 		self.ds = Dataset()
 		self.messages = self.ds.import_dataset()

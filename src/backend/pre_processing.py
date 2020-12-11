@@ -24,7 +24,7 @@ class PreProcessing:
     def __init__(self):
         self.lemmatizer = WordNetLemmatizer()
 
-    def pre_processing_text(self, corpus):
+    def pre_processing_text_for_similarity(self, corpus):
         #remove html tags
         corpus = re.sub(r'<.*?>', '', str(corpus))
         

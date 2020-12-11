@@ -71,4 +71,116 @@ StopIteration()04/12/2020 21:22:00 --------------
 '  You: ↑'04/12/2020 21:38:34 --------------
 '  Bot:  Talk more about it'04/12/2020 21:38:35 --------------
 '  You: any message not bye'04/12/2020 21:38:52 --------------
-'  Bot:  Barbatus?'
+'  Bot:  Barbatus?'10/12/2020 20:48:11 --------------
+'  You: exit'10/12/2020 20:48:11 --------------
+'  You: exit'10/12/2020 20:48:12 --------------
+'  You: \x03'10/12/2020 20:48:12 --------------
+"  Bot:    Bot:  I would like to hear more about it\n'PreProcessing' object has no attribute 'pre_processing_text_for_similarity'"10/12/2020 20:48:12 --------------
+'  You: ↑'10/12/2020 20:48:12 --------------
+"  Bot:    Bot:  Maybe there is some problem in processor right now. Sorry...\n'PreProcessing' object has no attribute 'pre_processing_text_for_similarity'"10/12/2020 20:48:13 --------------
+'  You: any message not bye'10/12/2020 20:48:13 --------------
+"  Bot:    Bot:  Talk more about it\n'PreProcessing' object has no attribute 'pre_processing_text_for_similarity'"10/12/2020 20:51:18 --------------
+'  You: exit'10/12/2020 20:51:19 --------------
+'  You: exit'10/12/2020 20:51:19 --------------
+'  You: \x03'10/12/2020 20:51:19 --------------
+"  Bot:    Bot:  My brain could not process this message... Try again, please!\npre_processing_text_for_neural_network() missing 1 required positional argument: 'corpus'"10/12/2020 20:51:20 --------------
+'  You: ↑'10/12/2020 20:51:20 --------------
+"  Bot:    Bot:  Talk more about it\npre_processing_text_for_neural_network() missing 1 required positional argument: 'corpus'"10/12/2020 20:51:20 --------------
+'  You: any message not bye'10/12/2020 20:51:24 --------------
+"  Bot:    Bot:  Can you explain it?\npre_processing_text_for_neural_network() missing 1 required positional argument: 'corpus'"10/12/2020 20:55:47 --------------
+'  You: exit'10/12/2020 20:55:48 --------------
+'  You: exit'10/12/2020 20:55:48 --------------
+'  You: \x03'10/12/2020 20:55:48 --------------
+'  Bot:  Maybe there is some problem in processor right now. Sorry...'10/12/2020 20:55:49 --------------
+'  You: ↑'10/12/2020 20:55:49 --------------
+'  Bot:  Can you explain it?'10/12/2020 20:55:49 --------------
+'  You: any message not bye'10/12/2020 20:56:13 --------------
+'  Bot:  Barbatus?'10/12/2020 20:59:37 --------------
+'  You: exit'10/12/2020 20:59:38 --------------
+'  You: exit'10/12/2020 20:59:38 --------------
+'  You: \x03'10/12/2020 20:59:38 --------------
+'  Bot:  My brain could not process this message... Try again, please!'10/12/2020 20:59:39 --------------
+'  You: ↑'10/12/2020 20:59:39 --------------
+'  Bot:  I would like to hear more about it'10/12/2020 20:59:39 --------------
+'  You: any message not bye'10/12/2020 20:59:58 --------------
+'  Bot:  Barbatus?'10/12/2020 21:03:56 --------------
+'  You: exit'10/12/2020 21:03:57 --------------
+'  You: exit'10/12/2020 21:03:57 --------------
+'  You: \x03'10/12/2020 21:03:57 --------------
+'  Bot:  I cannot understand it. Try again, please!'10/12/2020 21:03:58 --------------
+'  You: ↑'10/12/2020 21:03:58 --------------
+'  Bot:  Sorry, my Spanish is not good... Can you explain it in English?'10/12/2020 21:03:58 --------------
+'  You: any message not bye'10/12/2020 21:04:18 --------------
+'  Bot:  Barbatus?'10/12/2020 21:06:59 --------------
+'  You: exit'10/12/2020 21:07:00 --------------
+'  You: exit'10/12/2020 21:07:00 --------------
+'  You: \x03'10/12/2020 21:07:00 --------------
+'  Bot:  Can you explain it?'10/12/2020 21:07:01 --------------
+'  You: ↑'10/12/2020 21:07:01 --------------
+'  Bot:  Can you explain it?'10/12/2020 21:07:01 --------------
+'  You: any message not bye'10/12/2020 21:07:24 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:08:19 --------------
+'  You: exit'10/12/2020 21:08:20 --------------
+'  You: exit'10/12/2020 21:08:20 --------------
+'  You: \x03'10/12/2020 21:08:20 --------------
+'  Bot:  Sorry, my Spanish is not good... Can you explain it in English?'10/12/2020 21:08:21 --------------
+'  You: ↑'10/12/2020 21:08:21 --------------
+'  Bot:  My brain could not process this message... Try again, please!'10/12/2020 21:08:21 --------------
+'  You: any message not bye'10/12/2020 21:08:41 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:14:20 --------------
+'  You: exit'10/12/2020 21:14:21 --------------
+'  You: exit'10/12/2020 21:14:21 --------------
+'  You: \x03'10/12/2020 21:14:21 --------------
+'  Bot:  Talk more about it'10/12/2020 21:14:22 --------------
+'  You: ↑'10/12/2020 21:14:22 --------------
+'  Bot:  Maybe there is some problem in processor right now. Sorry...'10/12/2020 21:14:22 --------------
+'  You: any message not bye'10/12/2020 21:14:42 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:19:10 --------------
+'  You: exit'10/12/2020 21:19:11 --------------
+'  You: exit'10/12/2020 21:19:11 --------------
+'  You: \x03'10/12/2020 21:19:11 --------------
+'  Bot:  I would like to hear more about it'10/12/2020 21:19:12 --------------
+'  You: ↑'10/12/2020 21:19:12 --------------
+'  Bot:  My brain could not process this message... Try again, please!'10/12/2020 21:19:12 --------------
+'  You: any message not bye'10/12/2020 21:19:32 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:28:07 --------------
+'  You: exit'10/12/2020 21:28:08 --------------
+'  You: exit'10/12/2020 21:28:08 --------------
+'  You: \x03'10/12/2020 21:28:08 --------------
+'  Bot:  I would like to hear more about it'10/12/2020 21:28:09 --------------
+'  You: ↑'10/12/2020 21:28:09 --------------
+'  Bot:  I would like to hear more about it'10/12/2020 21:28:09 --------------
+'  You: any message not bye'10/12/2020 21:28:30 --------------
+'  Bot:  Found it?'10/12/2020 21:33:02 --------------
+'  You: exit'10/12/2020 21:33:03 --------------
+'  You: exit'10/12/2020 21:33:03 --------------
+'  You: \x03'10/12/2020 21:33:03 --------------
+'  Bot:  Can you explain it?'10/12/2020 21:33:04 --------------
+'  You: ↑'10/12/2020 21:33:04 --------------
+'  Bot:  Maybe there is some problem in processor right now. Sorry...'10/12/2020 21:33:04 --------------
+'  You: any message not bye'10/12/2020 21:33:24 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:44:32 --------------
+'  You: exit'10/12/2020 21:44:32 --------------
+'  You: exit'10/12/2020 21:44:33 --------------
+'  You: \x03'10/12/2020 21:44:33 --------------
+'  Bot:  I would like to hear more about it'10/12/2020 21:44:33 --------------
+'  You: ↑'10/12/2020 21:44:33 --------------
+'  Bot:  Can you explain it?'10/12/2020 21:44:34 --------------
+'  You: any message not bye'10/12/2020 21:44:54 --------------
+"  Bot:  But it's not funny now."10/12/2020 21:46:54 --------------
+'  You: exit'10/12/2020 21:46:55 --------------
+'  You: exit'10/12/2020 21:46:55 --------------
+'  You: \x03'10/12/2020 21:46:55 --------------
+'  Bot:  I cannot understand it. Try again, please!'10/12/2020 21:46:56 --------------
+'  You: ↑'10/12/2020 21:46:56 --------------
+'  Bot:  My brain could not process this message... Try again, please!'10/12/2020 21:46:56 --------------
+'  You: any message not bye'10/12/2020 21:47:17 --------------
+'  Bot:  Barbatus?'10/12/2020 22:44:31 --------------
+'  You: exit'10/12/2020 22:44:31 --------------
+'  You: exit'10/12/2020 22:44:32 --------------
+'  You: \x03'10/12/2020 22:44:32 --------------
+'  Bot:  Can you explain it?'10/12/2020 22:44:32 --------------
+'  You: ↑'10/12/2020 22:44:32 --------------
+'  Bot:  Talk more about it'10/12/2020 22:44:33 --------------
+'  You: any message not bye'10/12/2020 22:44:53 --------------
+"  Bot:  But it's not funny now."

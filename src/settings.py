@@ -10,6 +10,7 @@ PAGE_RANK_ANSWERS = CHATDATA_DIR + 'page_rank_answers.txt'
 PAGE_RANK_QUESTIONS = CHATDATA_DIR + 'page_rank_questions.txt'
 TOKENIZER_FILE = CHATDATA_DIR + 'tokenizer.pickle'
 LOG_FILE = ROOT_DIR + '/log.txt'
+CHATBOT_MODEL = 'model.h5'
 
 DEBUG_MODE = ['info']
 
