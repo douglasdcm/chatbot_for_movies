@@ -95,7 +95,7 @@ python3 run_ui.py
 
 ```bash
 cd src /
-sh Cover.sh
+sh coverage.sh
 ```
 
 O relatório de cobertura é gerado em htmlcov / index.html
