@@ -64,17 +64,17 @@ O bot de bate-papo está implantado em https://chatbotnaive.herokuapp.com/, ent�
 
 ## Instalando o chatbot localmente
 
-`` `bash
+```bash
 pip3 install -r requisitos.txt
-`` `
+```
 Nota: para Windows, instale o Xming e exporte o DISPLAY. O servidor deve estar em execução antes de iniciar a IU. Mais detalhes neste tíquete: https://stackoverflow.com/questions/39804366/tclerror-no-display-name-and-no-display-environment-variable-on-windows-10-bas/39805613.
 
 ## Executando o servidor de aplicativos
 
-`` `bash
+```bash
 cd scr /
 python3 app.py
-`` `
+```
 acessar a url informada pelo servidor. Por exemplo http://127.0.0.1:5000/
 
 ## Executando o chatbot na CLI
@@ -85,18 +85,18 @@ python3 run_cli.py
 `` `
 ## Executando o chatbot em uma IU de desktop
 
-`` `bash
+```bash
 exportar DISPLAY = 0.0
 cd scr /
 python3 run_ui.py
-`` `
+```
 
 ## Executando os testes e cobertura
 
-`` `bash
+```bash
 cd src /
 sh Cover.sh
-`` `
+```
 
 O relatório de cobertura é gerado em htmlcov / index.html
 
