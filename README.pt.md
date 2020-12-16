@@ -79,10 +79,10 @@ acessar a url informada pelo servidor. Por exemplo http://127.0.0.1:5000/
 
 ## Executando o chatbot na CLI
 
-`` `bash
+```bash
 cd scr /
 python3 run_cli.py
-`` `
+```
 ## Executando o chatbot em uma IU de desktop
 
 ```bash
