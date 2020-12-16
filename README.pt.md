@@ -60,7 +60,7 @@ Este processamento é feito para todas as mensagens e a mensagem com o valor mai
 ## Interface
 O bot de bate-papo está implantado em https://chatbotnaive.herokuapp.com/, então experimente :)
 <br/> <br/>
-! [texto alternativo] (https://i.ibb.co/8BsCQ8h/chatbotui.png)
+! [alt text] (https://i.ibb.co/8BsCQ8h/chatbotui.png)
 
 ## Instalando o chatbot localmente
 
