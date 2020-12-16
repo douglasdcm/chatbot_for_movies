@@ -133,7 +133,7 @@ Certifique-se de atualizar os testes conforme apropriado.
 Marque o repositório com uma estrela, se gostou.
 
 ## Licença
-[MIT] (https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## Referências
