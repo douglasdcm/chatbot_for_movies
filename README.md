@@ -126,6 +126,16 @@ TOTAL                         243      6    98%
 - This chat bot was developed using 30000 messages due to performance issues, so pay attention to your dataset if you are retrainign the chat bot.
 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+Mark the repository with a star if liked it.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
 ## References
 - Dataset https://www.kaggle.com/Cornell-University/movie-dialog-corpus?select=movie_lines.tsv
 - https://shanebarker.com/blog/deep-learning-chatbot/

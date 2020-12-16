@@ -125,6 +125,16 @@ TOTAL                         243      6    98%
 - O model.h5 e o tokenizer.pickle também são gerados pelos notebooks e é necessário copiar ambos em src / chatdata.
 - Este bot de bate-papo foi desenvolvido usando 30.000 mensagens devido a problemas de desempenho, então preste atenção ao seu conjunto de dados se você for re-treinar o bot de bate-papo.
 
+## Contribuindo
+Solicitações pull são bem-vindas. Para mudanças importantes, abra um problema primeiro para discutir o que você gostaria de mudar.
+
+Certifique-se de atualizar os testes conforme apropriado.
+
+Marque o repositório com uma estrela, se gostou.
+
+## Licença
+[MIT] (https://choosealicense.com/licenses/mit/)
+
 
 ## Referências
 - Conjunto de dados https://www.kaggle.com/Cornell-University/movie-dialog-corpus?select=movie_lines.tsv
