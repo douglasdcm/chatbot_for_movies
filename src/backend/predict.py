@@ -44,6 +44,7 @@ class Prediction:
 
         p = self.tokenizer.texts_to_matrix([msg_nn])
 
+        breakpoint()
         res = self.model.predict(p)
 
         if res >= 0.5:

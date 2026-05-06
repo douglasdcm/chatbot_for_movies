@@ -15,7 +15,6 @@ class ChatBotInit:
 
         # TODO move to outside
         self.model_name = CHATBOT_MODEL
-        self.embedding_file = "embedding_wiki_100d_pt.txt"
         self.ds = Dataset()
         self.messages = self.ds.import_dataset()
         self.questions = self.ds.get_questions(self.messages)  # ['why?', 'how?', 'when?, ...']
