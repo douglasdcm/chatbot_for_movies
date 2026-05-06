@@ -1,7 +1,8 @@
-import unittest
-from backend.chatbot import ChatBotInit
-from unittest import mock
 import io
+import unittest
+from unittest import mock
+
+from backend.chatbot import ChatBotInit
 
 
 class TestPredictMethods(unittest.TestCase):
@@ -71,7 +72,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_chabot_print_prediction_from_user_input_keystroke(self):
         # arrange
-        msg = u"\u2191"  # arrow down
+        msg = "\u2191"  # arrow down
         cb = ChatBotInit()
 
         original_input = mock.builtins.input
@@ -88,7 +89,7 @@ class TestPredictMethods(unittest.TestCase):
 
     def test_chabot_print_prediction_from_user_input_ctrl_c(self):
         # arrange
-        msg = u"\u0003"  # ctrl   c
+        msg = "\u0003"  # ctrl   c
         cb = ChatBotInit()
 
         original_input = mock.builtins.input

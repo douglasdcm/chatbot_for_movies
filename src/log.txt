@@ -183,4 +183,14 @@ StopIteration()04/12/2020 21:22:00 --------------
 '  You: ↑'10/12/2020 22:44:32 --------------
 '  Bot:  Talk more about it'10/12/2020 22:44:33 --------------
 '  You: any message not bye'10/12/2020 22:44:53 --------------
-"  Bot:  But it's not funny now."
+"  Bot:  But it's not funny now."05/05/2026 23:41:18 --------------
+'  You: hello'05/05/2026 23:41:18 --------------
+"  Bot:    Bot:  Talk more about it\n\n**********************************************************************\n  Resource 'averaged_perceptron_tagger_eng' not found.\n  Please use the NLTK Downloader to obtain the resource:\n\n  >>> import nltk\n  >>> nltk.download('averaged_perceptron_tagger_eng')\n\n  For more information see: https://www.nltk.org/data.html\n\n  Attempted to load 'taggers/averaged_perceptron_tagger_eng/'\n\n  Searched in:\n    - '/home/douglas/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/share/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/lib/nltk_data'\n    - '/usr/share/nltk_data'\n    - '/usr/local/share/nltk_data'\n    - '/usr/lib/nltk_data'\n    - '/usr/local/lib/nltk_data'\n**********************************************************************\n"05/05/2026 23:41:33 --------------
+"  Bot:    Bot:  I would like to hear more about it\n\n**********************************************************************\n  Resource 'averaged_perceptron_tagger_eng' not found.\n  Please use the NLTK Downloader to obtain the resource:\n\n  >>> import nltk\n  >>> nltk.download('averaged_perceptron_tagger_eng')\n\n  For more information see: https://www.nltk.org/data.html\n\n  Attempted to load 'taggers/averaged_perceptron_tagger_eng/'\n\n  Searched in:\n    - '/home/douglas/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/share/nltk_data'\n    - '/home/douglas/repo/chatbot_for_movies/venv/lib/nltk_data'\n    - '/usr/share/nltk_data'\n    - '/usr/local/share/nltk_data'\n    - '/usr/lib/nltk_data'\n    - '/usr/local/lib/nltk_data'\n**********************************************************************\n"05/05/2026 23:41:36 --------------
+'  You: exit'05/05/2026 23:43:19 --------------
+'  You: hello'05/05/2026 23:45:00 --------------
+'  You: hello'05/05/2026 23:53:47 --------------
+'  You: exit'05/05/2026 23:54:04 --------------
+'  You: hello'05/05/2026 23:54:23 --------------
+'  Bot:  Barbatus?'05/05/2026 23:54:48 --------------
+'  You: exit'

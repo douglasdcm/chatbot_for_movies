@@ -1,11 +1,11 @@
-import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-import string
-from nltk.corpus import wordnet
-import numpy as np
 import math
+import re
+import string
+
+import nltk
+import numpy as np
+from nltk.corpus import stopwords, wordnet
+from nltk.stem import WordNetLemmatizer
 
 
 class PreProcessing:
@@ -25,64 +25,64 @@ class PreProcessing:
         self.lemmatizer = WordNetLemmatizer()
 
     def pre_processing_text_for_similarity(self, corpus):
-        #remove html tags
-        corpus = re.sub(r'<.*?>', '', str(corpus))
-        
-        #remove non-alphanumeric characters
-        corpus = re.sub(r'[^a-z A-Z 0-9 \s]', '', str(corpus))
-        
-        #remove duplicated spaces
-        corpus = re.sub(r' +', ' ', str(corpus))
+        # remove html tags
+        corpus = re.sub(r"<.*?>", "", str(corpus))
 
-        #remove numbers
+        # remove non-alphanumeric characters
+        corpus = re.sub(r"[^a-z A-Z 0-9 \s]", "", str(corpus))
+
+        # remove duplicated spaces
+        corpus = re.sub(r" +", " ", str(corpus))
+
+        # remove numbers
         corpus = re.sub("\d+", "", corpus)
-        
-        #capitalization
+
+        # capitalization
         corpus = corpus.lower()
-        
-        #tokenization
+
+        # tokenization
         corpus = re.findall(r"\w+(?:'\w+)?|[^\w\s]", corpus)
-        
-        #lammatization
+
+        # lammatization
         corpus = [self.lemmatizer.lemmatize(c, self.get_wordnet_pos(c)) for c in corpus]
-        
-        #remove punctuation
+
+        # remove punctuation
         corpus = [t for t in corpus if t not in string.punctuation]
 
-        #remove stopwords
+        # remove stopwords
         stopwords_ = stopwords.words("english")
         corpus = [t for t in corpus if t not in stopwords_]
-        
-        corpus = ' '.join(corpus)
+
+        corpus = " ".join(corpus)
 
         return corpus
 
     def pre_processing_text_for_neural_network(self, corpus):
-        #remove html tags
-        corpus = re.sub(r'<.*?>', '', str(corpus))
-        
-        #remove non-alphanumeric characters
-        corpus = re.sub(r'[^a-z A-Z 0-9 \s]', '', str(corpus))
-        
-        #remove duplicated spaces
-        corpus = re.sub(r' +', ' ', str(corpus))
+        # remove html tags
+        corpus = re.sub(r"<.*?>", "", str(corpus))
 
-        #remove numbers
+        # remove non-alphanumeric characters
+        corpus = re.sub(r"[^a-z A-Z 0-9 \s]", "", str(corpus))
+
+        # remove duplicated spaces
+        corpus = re.sub(r" +", " ", str(corpus))
+
+        # remove numbers
         corpus = re.sub("\d+", "", corpus)
-        
-        #capitalization
+
+        # capitalization
         corpus = corpus.lower()
-        
-        #tokenization
+
+        # tokenization
         corpus = re.findall(r"\w+(?:'\w+)?|[^\w\s]", corpus)
-        
-        #lammatization
+
+        # lammatization
         corpus = [self.lemmatizer.lemmatize(c, self.get_wordnet_pos(c)) for c in corpus]
-        
-        #remove punctuation
+
+        # remove punctuation
         corpus = [t for t in corpus if t not in string.punctuation]
-        
-        corpus = ' '.join(corpus)
+
+        corpus = " ".join(corpus)
 
         return corpus
 
@@ -90,24 +90,23 @@ class PreProcessing:
         f = open(file, "r")
         pc = f.read()
 
-        pc = pc.replace('}','')
-        pc = pc.replace('{','')
-        pc = pc.replace('\'','')
-        pc = pc.split(', ')
+        pc = pc.replace("}", "")
+        pc = pc.replace("{", "")
+        pc = pc.replace("'", "")
+        pc = pc.split(", ")
 
         f.close()
 
-
         d = dict()
         for line in pc:
-        	(key, val) = line.split(': ')
-        	d[key] = float(val)
+            key, val = line.split(": ")
+            d[key] = float(val)
 
         return d
 
     def normalize_dictionary(self, dic):
 
-        zero_dict = {k: 0.0 for k, v in dic.items() if not isinstance(v, np.floating) }
+        zero_dict = {k: 0.0 for k, v in dic.items() if not isinstance(v, np.floating)}
 
         for v in dic.values():
             if not isinstance(v, np.floating):
@@ -117,7 +116,7 @@ class PreProcessing:
 
         if den == 0:
             return zero_dict
-        
+
         factor = 1.0 / den
 
         return {k: (v * factor) for k, v in dic.items()}

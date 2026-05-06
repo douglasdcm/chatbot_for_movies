@@ -1,8 +1,13 @@
-from settings import DATA_FILE, PAGE_RANK_QUESTIONS, PAGE_RANK_ANSWERS, TOKENIZER_FILE
-import pandas as pd
 import ast
 import pickle
-from pre_processing import PreProcessing
+
+import pandas as pd
+
+from src.settings import (DATA_FILE, PAGE_RANK_ANSWERS, PAGE_RANK_QUESTIONS,
+                      TOKENIZER_FILE)
+from src.backend.pre_processing import PreProcessing
+
+# from pre_processing import PreProcessing
 
 
 class Dataset:
@@ -12,7 +17,15 @@ class Dataset:
 
     def import_dataset(self):
         messages = pd.read_csv(DATA_FILE, delimiter="\t", quoting=3, encoding="ISO-8859-2")
-        messages.columns = ['msg_line', 'user_id', 'movie_id', 'msg', 'msg_pre_processed', 'msg_2', 'target']
+        messages.columns = [
+            "msg_line",
+            "user_id",
+            "movie_id",
+            "msg",
+            "msg_pre_processed",
+            "msg_2",
+            "target",
+        ]
         return messages
 
     def get_questions(self, messages):
@@ -30,7 +43,7 @@ class Dataset:
             file = PAGE_RANK_ANSWERS
         else:
             file = PAGE_RANK_QUESTIONS
-            
+
         pc = self.pp.pre_processing_page_rank_file(file)
 
         return self.pp.normalize_dictionary(pc)
